@@ -1,0 +1,31 @@
+import streamlit as st
+
+
+with st.sidebar:
+    st.title("'🤗💬 Chat with your Data'")
+
+def main():
+    st.header("Chat with your Data")
+
+    # Load documents from the 'data' directory
+    reader = SimpleDirectoryReader(input_dir="./data", recursive=True)
+    docs = reader.load_data()
+
+    # Use Gemini instead of OpenAI
+    service_context = ServiceContext.from_defaults(
+        llm=GeminiLLM()
+    )
+
+    # Create vector index
+    index = VectorStoreIndex.from_documents(docs, service_context=service_context)
+
+    # User input
+    query = st.text_input("Ask questions related to your Data")
+
+    if query:
+        chat_engine = index.as_chat_engine(chat_mode="condense_question", verbose=True)
+        response = chat_engine.chat(query)
+        st.write(response.response)
+
+if __name__ == '__main__':
+    main()
