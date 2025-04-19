@@ -1,9 +1,0 @@
-fastapi
-uvicorn
-python-dotenv
-requests
-pydantic
-langchain
-llama-index
-sentence-transformers
-chromadb

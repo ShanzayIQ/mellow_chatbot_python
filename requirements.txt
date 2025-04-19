@@ -1,40 +1,9 @@
-chatbot_API/
-├── app.py                ← Your FastAPI app (main file)
-├── topsecret.py          ← API key securely stored
-├── requirements.txt      ← All Python dependencies
-├── chroma_db/            ← Vector DB
-├── data/                 ← Source docs for the RAG
-└── REQUIREMENTS          ← the file that you're reading rioght now shanzayy i'll explain the flow and integration here if i can lol
-
-###
-INSTALL EVERYTHING IN REQ.TXT THOSE R THE DEPENDENCIES using thus: pip install -r req.txt
-
-# Chatbot API (FastAPI Backend)
-
-### Setup:
-1. Install Python 3.9 (cuz i was working on this one)
-2. Run: `pip install -r req.txt`
-3. Start server: `uvicorn app:app --reload` 
-
-### Chat Endpoint:
-- URL: `http://127.0.0.1:8000/chat`
-- Method: POST
-- Body:
-```json
-{
-  "message": "Hello"
-}
-
-Response:
-json
-{
-  "response": "Hi there!"
-}
-IMPORTANT [you can call your endpoint from Flutter using http.post] 
-
-###Note:
-API key is in topsecret.py
-Knowledge base is in /data
-Vector DB is in /chroma_db (basically vector form mai data store ho raha of the stuff that is in data folder)
-
-
+fastapi
+uvicorn
+python-dotenv
+requests
+pydantic
+langchain
+llama-index
+sentence-transformers
+chromadb
