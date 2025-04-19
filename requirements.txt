@@ -4,7 +4,6 @@ python-dotenv
 requests
 pydantic
 langchain
-langchain_community
 llama-index
 sentence-transformers
 chromadb
