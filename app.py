@@ -35,6 +35,10 @@ def clean_response(text):
     return text
 
 
+@app.post("/")
+async def root(data: dict):
+    return {"message": "Received POST request!", "data": data}
+
 # DeepSeek LLM class
 class DeepSeekLLM(LLM):
     model: ClassVar[str] = "deepseek-chat"
