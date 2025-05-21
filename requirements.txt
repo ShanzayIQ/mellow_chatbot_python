@@ -6,4 +6,6 @@ pydantic
 langchain
 langchain_community
 llama-index
+sentence-transformers
+chromadb
 hf_xet
